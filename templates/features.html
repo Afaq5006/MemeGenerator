@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meme Generation</title>
+        <link rel="icon" href="./Logo.jpg" type="image/icon type">
+        <!-- Sheet Link with TailwindCSS for Designing -->
+        <link rel="stylesheet" type="text/css" href="./slick.css?v2022">
+        <link rel="stylesheet" type="text/css" href="./slick-theme.css?v2022">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css">
+    <!-- Small CSS to Hide elements at 1520px size -->
+    <style>
+         body{
+            background-color: rgb(165, 182, 182);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media(max-width:1520px) {
+            .left-svg {
+                display: none;
+            }
+        }
+
+        /* small css for the mobile nav close */
+        #nav-mobile-btn.close span:first-child {
+            transform: rotate(45deg);
+            top: 4px;
+            position: relative;
+            background: #a0aec0;
+        }
+
+        #nav-mobile-btn.close span:nth-child(2) {
+            transform: rotate(-45deg);
+            margin-top: 0px;
+            background: #a0aec0;
+        }
+    </style>
+    
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    html,* { font-family: 'Inter'; }
+.lead { font-size: 1.5rem; font-weight: 300; }
+.container { margin: 50px auto; max-width: 960px; }
+
+    .slider {
+        width: 100%;
+        margin: 50px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden antialiased">
+  <!-- Header Section -->
+    <header class="relative z-50 w-full h-24">
+        <div
+            class="container flex items-center justify-center h-full max-w-6xl px-8 mx-auto sm:justify-between xl:px-0">
+
+            <a href="/" class="relative flex items-center inline-block h-5 h-full font-black leading-none">
+                <svg class="w-auto h-6 text-indigo-600 fill-current" viewBox="0 0 194 116">
+                    <g fill-rule="evenodd">
+                        <path
+                            d="M96.869 0L30 116h104l-9.88-17.134H59.64l47.109-81.736zM0 116h19.831L77 17.135 67.088 0z" />
+                        <path d="M87 68.732l9.926 17.143 29.893-51.59L174.15 116H194L126.817 0z" />
+                    </g>
+                </svg>
+                <span class="ml-3 text-xl text-gray-800">Meme Generator<span class="text-pink-500">.</span></span>
+            </a>
+
+            <nav id="nav"
+                class="absolute top-0 left-0 z-50 flex flex-col items-center justify-between hidden w-full h-64 pt-5 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
+                <a href="./index.html"
+                    class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Home</a>
+                <a href="./features.html"
+                    class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Features</a>
+                    
+                <a href="./pricing.html"
+                    class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Pricing</a>
+                <a href="./memeGeneration.html"
+                    class="font-bold duration-100 transition-color hover:text-indigo-600">Meme Generation</a>
+                <div class="flex flex-col block w-full font-medium border-t border-gray-200 md:hidden">
+                    <a href="#_" class="w-full py-2 font-bold text-center text-pink-500">Login</a>
+                    <a href="#_"
+                        class="relative inline-block w-full px-5 py-3 text-sm leading-none text-center text-white bg-indigo-700 fold-bold">Get
+                        Started</a>
+                </div>
+            </nav>
+
+            
+
+            <div id="nav-mobile-btn"
+                class="absolute top-0 right-0 z-50 block w-6 mt-8 mr-10 cursor-pointer select-none md:hidden sm:mt-10">
+                <span class="block w-full h-1 mt-2 duration-200 transform bg-gray-800 rounded-full sm:mt-1"></span>
+                <span class="block w-full h-1 mt-1 duration-200 transform bg-gray-800 rounded-full"></span>
+            </div>
+
+        </div>
+    </header>
+    <!-- End Header Section-->
+
+    <!-- BEGIN HERO SECTION -->
+   
+    <!-- HERO SECTION END -->
+
+    <!-- BEGIN FEATURES SECTION -->
+    <div id="features" class="relative w-full px-8 py-2 border-t border-gray-200 md:py-16 lg:py-24 xl:py-40 xl:px-0">
+    </div>
+        <div class="container flex flex-col items-center justify-between h-full max-w-6xl mx-auto">    
+            <h2
+                class="max-w-2xl px-5 mt-2 text-3xl font-black leading-tight text-center text-gray-900 sm:mt-0 sm:px-0 sm:text-6xl">
+                Built and Designed with you in Mind</h2>
+                <h3 class="text-lg font-bold tracking-tight text-black uppercase">Our Features</h3
+            </div>
+      </div>      
+            
+
+            <div class="flex flex-col w-full mt-0 lg:flex-row sm:mt-10 lg:mt-20">
+                
+                   
+                                    <div class="w-full max-w-md  p-4 mx-auto mb-0 sm:mb-16 lg:mb-0 lg:w-1/3">
+                    
+                                        <a href="#">
+                                        
+                                            <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M234.7 42.7L197 56.8c-3 1.1-5 4-5 7.2s2 6.1 5 7.2l37.7 14.1L248.8 123c1.1 3 4 5 7.2 5s6.1-2 7.2-5l14.1-37.7L315 71.2c3-1.1 5-4 5-7.2s-2-6.1-5-7.2L277.3 42.7 263.2 5c-1.1-3-4-5-7.2-5s-6.1 2-7.2 5L234.7 42.7zM46.1 395.4c-18.7 18.7-18.7 49.1 0 67.9l34.6 34.6c18.7 18.7 49.1 18.7 67.9 0L529.9 116.5c18.7-18.7 18.7-49.1 0-67.9L495.3 14.1c-18.7-18.7-49.1-18.7-67.9 0L46.1 395.4zM484.6 82.6l-105 105-23.3-23.3 105-105 23.3 23.3zM7.5 117.2C3 118.9 0 123.2 0 128s3 9.1 7.5 10.8L64 160l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L128 160l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L128 96 106.8 39.5C105.1 35 100.8 32 96 32s-9.1 3-10.8 7.5L64 96 7.5 117.2zm352 256c-4.5 1.7-7.5 6-7.5 10.8s3 9.1 7.5 10.8L416 416l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L480 416l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L480 352l-21.2-56.5c-1.7-4.5-6-7.5-10.8-7.5s-9.1 3-10.8 7.5L416 352l-56.5 21.2z"/></svg>
+                                                <h4 class="mt-4 text-xl font-bold leading-tight text-gray-800">Text Editing</h4>
+                                                <li>
+                                                <label class="mt-4 text-base font-normal text-gray-700">Font</label>
+                                            </li>
+                                            <li>
+                                                <label class=" text-base font-normal text-gray-700">Size</label>
+                                            </li>
+                                            <li>
+                                                <label class=" text-base font-normal text-gray-700">Color</label>
+                                            </li>
+                                            <li>
+                                                <label class=" text-base font-normal text-gray-700">Positioning</label>
+                                            </li>
+                                            </a>
+                                                        </div>
+                                                        <div class="w-full max-w-md p-4 mx-auto mb-0 sm:mb-16 lg:mb-0 lg:w-1/3">
+                    
+                                                            <a href="#">
+                                                            
+                                                                <svg class = "w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"/></svg>
+                                                                    <path d="M448 80c8.8 0 16 7.2 16 16V415.8l-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3V96c0-8.8 7.2-16 16-16H448zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/></svg>
+                                                                    <h4 class="mt-4 text-xl font-bold leading-tight text-gray-800">Image Editing</h4>
+                                                                    <li>
+                                                                        <label class="mt-4 text-base font-normal text-gray-700">Crop</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class=" text-base font-normal text-gray-700">Resize</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class=" text-base font-normal text-gray-700">Adjust</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class=" text-base font-normal text-gray-700">Contrast</label>
+                                                                    </li>
+                                                                        </a>
+                                                        </div>
+                                                                            <div class="w-full max-w-md p-4 mx-auto mb-0 sm:mb-16 lg:mb-0 lg:w-1/3">
+                    
+                                                                                <a href="#">
+                                                                                
+                                                                                    <svg class = "w-10 h-10"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>                                                                    <path d="M448 80c8.8 0 16 7.2 16 16V415.8l-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3V96c0-8.8 7.2-16 16-16H448zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/></svg>
+                                                                                        <h4 class="mt-4 text-xl font-bold leading-tight text-gray-800">Text-to-Image Synthesis</h4>
+                                                                                        <li>
+                                                                                            <label class="mt-4 text-base font-normal text-gray-700">Generate images from humorous text </label>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <label class=" text-base font-normal text-gray-700">Adjusting the style</label>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <label class=" text-base font-normal text-gray-700">Adjusting the color</label>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <label class=" text-base font-normal text-gray-700">Adjusting the parameters</label>
+                                                                                        </li>
+                                                                                    </a>
+                                                                                </div> 
+                                                                                <div class="w-full max-w-md p-4 mx-auto mb-0 sm:mb-16 lg:mb-0 lg:w-1/3">
+                    
+                                                                                    <a href="#">
+                                                                                    
+                                                                                        <svg class = "w-10 h-10"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M142.4 21.9c5.6 16.8-3.5 34.9-20.2 40.5L96 71.1V192c0 53 43 96 96 96s96-43 96-96V71.1l-26.1-8.7c-16.8-5.6-25.8-23.7-20.2-40.5s23.7-25.8 40.5-20.2l26.1 8.7C334.4 19.1 352 43.5 352 71.1V192c0 77.2-54.6 141.6-127.3 156.7C231 404.6 278.4 448 336 448c61.9 0 112-50.1 112-112V265.3c-28.3-12.3-48-40.5-48-73.3c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V336c0 97.2-78.8 176-176 176c-92.9 0-168.9-71.9-175.5-163.1C87.2 334.2 32 269.6 32 192V71.1c0-27.5 17.6-52 43.8-60.7l26.1-8.7c16.8-5.6 34.9 3.5 40.5 20.2zM480 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
+                                                                                            <h4 class="mt-4 text-xl font-bold leading-tight text-gray-800">Generate text and image from AI</h4>
+                                                                                            <li>
+                                                                                                <label class=" text-base font-normal text-gray-700">Enter a topic</label>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <label class=" text-base font-normal text-gray-700">Generate a Funny text from AI</label>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <label class=" text-base font-normal text-gray-700">Generate a Funny image from AI</label>
+                                                                                            </li>
+                                                                                        </a>
+                                                                                    </div> 
+                                        </div>                
+                                </div>
+                            </div>
+                        </div>
+
+            </div> 
+                            <!-- Trending Memes Section -->
+                            <h4 class="mt-4 text-3xl font-bold leading-tight text-center text-Black-200">Trending Memes</h4>
+                            <div class="row mt-4">
+                              <!-- Slides go here -->
+                            </div>
+                          </div>
+
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <section class="regular slider">
+                        <div>
+                            <img src="https://www.inpixio.com/wp-content/uploads/2021/06/Baby_Meme.jpg">
+                          </div>
+                      <div>
+                        <img src="https://humornama.com/wp-content/uploads/2022/03/Awooga-Meme-Template-on-Turning-Red-608x342.jpg">
+                      </div>
+                      <div>
+                        <img src="https://humornama.com/wp-content/uploads/2022/04/People-Who-Dont-Know-Vs-People-Who-Know-Meme-Template-on-Mr-Incredible-608x365.jpg">
+                      </div>
+                      <div>
+                        <img src="https://humornama.com/wp-content/uploads/2022/03/Akshay-Kumar-Pose-Meme-Template-on-Phir-Hera-Pheri-608x342.jpg">
+                      </div>
+                      <div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLuwk_6fJd7xPbz4W3SN1MS9Ie0Mihy6pzWb6OrdwlSkOj805Ydd43mS-VrEyktf93Ej0&usqp=CAU">
+                      </div>
+                      <div>
+                        <img src="https://i0.wp.com/comicsandmemes.com/wp-content/uploads/blank-meme-templates-joker-and-spider-man-dance-stairs.jpg?resize=614%2C345&ssl=1">
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              
+              <script>
+                $(document).ready(function() {
+                  $('.regular').slick({
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    dots: true,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    pauseOnHover: false,
+                  });
+                });
+              </script>
+              
+              
+
+    <footer class="px-4 pt-12 pb-8 text-white bg-white border-t border-gray-200">
+        <div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
+            <div class="w-full pl-12 mr-4 text-left lg:w-1/4 sm:text-center sm:pl-0 lg:text-left">
+                <a href="/"
+                    class="flex justify-start block text-left sm:text-center lg:text-left sm:justify-center lg:justify-start">
+                    <span class="flex items-start sm:items-center">
+                        <svg class="w-auto h-6 text-gray-800 fill-current" viewBox="0 0 194 116"
+                            xmlns="#">
+                            <g fill-rule="evenodd">
+                                <path
+                                    d="M96.869 0L30 116h104l-9.88-17.134H59.64l47.109-81.736zM0 116h19.831L77 17.135 67.088 0z">
+                                </path>
+                                <path d="M87 68.732l9.926 17.143 29.893-51.59L174.15 116H194L126.817 0z"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                <p class="mt-6 mr-4 text-base text-gray-500">reate the next-level of Memes and engaged user for better experience.
+                </p>
+            </div>
+            <div class="block w-full pl-10 mt-6 text-sm lg:w-3/4 sm:flex lg:mt-0">
+                <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
+                    <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
+                        Product</li>
+                    <li><a href="#_"
+                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Features</a>
+                    </li>
+                    <li><a href="#_"
+                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">AI Generative Memes</a>
+                    </li>
+                    <li><a href="#_"
+                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">hilarious Text</a>
+                    </li>
+                    <li><a href="#_"
+                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Text Generative Memes</a></li>
+                </ul>
+                <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
+                    <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
+                        Company</li>
+                    <li><a href="#_"
+                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Privacy</a>
+                    </li>
+                    <li><a href="#_" class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Terms
+                            of
+                            Service</a></li>
+                </ul>
+                <ul class="flex flex-col w-full p-0 font-medium text-left text-gray-700 list-none">
+                    <li class="inline-block px-3 py-2 mt-5 font-bold tracking-wide text-gray-800 uppercase md:mt-0">
+                        Editing
+                    </li>
+                    <li><a href="#"
+                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Picture Edit</a></li>
+                    <li><a href="#"
+                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Contrast Setting
+                            </a></li>
+                    <li><a href="#"
+                            class="inline-block px-3 py-2 text-gray-500 no-underline hover:text-gray-600">Cools Filters</a></li>
+                </ul>
+                <div class="flex flex-col w-full text-gray-700">
+                    <div class="inline-block px-3 py-2 mt-5 font-bold text-gray-800 uppercase md:mt-0">Follow Us</div>
+                    <div class="flex justify-start pl-4 mt-2">
+                        <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
+                            target="_blank" rel="noopener noreferrer" href="#">
+                            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="#">
+                                <path
+                                    d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z" />
+                            </svg>
+                        </a>
+                        <a class="flex items-center block mr-6 text-gray-400 no-underline hover:text-gray-600"
+                            target="_blank" rel="noopener noreferrer" href="#">
+                            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="#">
+                                <path
+                                    d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+                            </svg>
+                        </a>
+                        <a class="flex items-center block text-gray-400 no-underline hover:text-gray-600"
+                            target="_blank" rel="noopener noreferrer" href="#">
+                            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="#">
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">© 2023 AI Studio. All rights
+            reserved.</div>
+
+          
+    </footer>
+
+    <!-- a little JS for the mobile nav button -->
+    <script src="https://use.fontawesome.com/05be96b953.js"></script>
+    <script>
+        
+        if (document.getElementById('nav-mobile-btn')) {
+            document.getElementById('nav-mobile-btn').addEventListener('click', function () {
+                if (this.classList.contains('close')) {
+                    document.getElementById('nav').classList.add('hidden');
+                    this.classList.remove('close');
+                } else {
+                    document.getElementById('nav').classList.remove('hidden');
+                    this.classList.add('close');
+                }
+            });
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+  <script src="./slick.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      
+    });
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1VDDWMRSTH');
+  </script>
+</body>
+</html>
